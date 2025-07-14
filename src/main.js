@@ -94,4 +94,16 @@ window.addEventListener('DOMContentLoaded', () => {
                 console.log('new webview error', e)
             })
         })
+    // notify
+    document.querySelector('#notify').addEventListener('click', async (e) => {
+        e.preventDefault()
+        console.log('notify')
+        invoke('notification', {
+            params: {
+                title: 'Notification Title',
+                body: 'This is a notification message.',
+                icon: 'face-smile',
+            },
+        })
+    })
 })
